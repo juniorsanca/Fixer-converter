@@ -1,0 +1,6 @@
+framework module Pods_myage2 {
+  umbrella header "Pods-myage2-umbrella.h"
+
+  export *
+  module * { export * }
+}
