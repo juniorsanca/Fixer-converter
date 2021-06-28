@@ -189,7 +189,7 @@ export const logout = ({ commit, state }) => {
 
 export const allActus = ({ commit }) => {
     axios
-        .get("http://127.0.0.1:8000/api/actus")
+        .get("http://naele.herokuapp.com/api/actus")
         .then((response) => {
             commit("dataNews", response.data);
             console.log(response.data)
