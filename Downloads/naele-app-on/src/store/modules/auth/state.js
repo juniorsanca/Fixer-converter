@@ -6,5 +6,6 @@ export default {
     actus: {},
     plans: {},
     actu: {},
+    contact: {}
 
 }

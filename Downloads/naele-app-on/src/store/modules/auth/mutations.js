@@ -1,16 +1,26 @@
 export const token = (state, token) => {
-    state.user.token = token;
+    state.user.token = token
     localStorage.setItem("Authtoken", token);
-};
+}
+export const data = (state, data) => {
+    state.user.data = data
+}
 
-export const dataNews = (state, data) => {
-    state.actus = data;
-};
+export const dataNews = (state, actus) => {
+    state.actus = actus
+}
 
-export const dataServices = (state, data) => {
-    state.plans = data;
-};
+export const dataServices = (state, plans) => {
+    state.plans = plans
+}
 
-export const actu = (state, data) => {
-    state.actu = data;
-};
+export const actu = (state, actu) => {
+    state.actu = actu
+}
+
+export const contactMe = (state, contact) => {
+    state.contact = contact
+}
+
+
+

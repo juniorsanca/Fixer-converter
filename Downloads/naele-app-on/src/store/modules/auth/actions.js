@@ -79,13 +79,14 @@ export const register = ({ commit }, form) => {
                     updated_at: result.data.updated_at,
                 };
 
-        commit('data', user)
-    }).catch(() => {
-        router.push({ name: "Login"});
-        });
-        router.push("/")
-        //console.log(error)
-    })
+            commit('data', user)
+        }).catch(() => {
+            router.push({ name: "Login"});
+            });
+            router.push("/")
+            //console.log(error)
+        })
+
         .catch((error) => {
             const statusCode = error.response.status;
             if (statusCode === 409){
@@ -96,6 +97,34 @@ export const register = ({ commit }, form) => {
             }
         })
 }
+
+
+export const contact = ({ commit }, form) => {
+    axios.post(
+        'http://127.0.0.1:8000/api/contact',
+        {
+            firstname: form.firstname,
+            lastname: form.lastname,
+            email: form.email,
+            subject: form.subject,
+            message: form.message,
+            device_name: "naele"
+        }
+    ).then((response) => {
+        commit('contactMe', response.data)
+            .catch(() => {
+                router.push({ name: "/" });
+            });
+        router.push("/");
+        console.log("votre message à bien été envoyé !")
+    })
+        .catch(() => {
+            router.push({ name: "Contact"});
+        });
+    router.push("/")
+
+};
+
 
 
 export const userInit = ({ commit }) => {
@@ -194,7 +223,7 @@ export const showActu = ({ commit }, id) => {
                 created_at: response.data.created_at,
                 updated_at: response.data.updated_at,
             };
-            commit("data", actu);
+            commit("actu", actu);
             console.log(actu)
         })
         .catch(() => {});

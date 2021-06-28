@@ -19,11 +19,18 @@ export const token = (state) => {
 export const actus = (state) => {
     return state.actus;
 };
+export const actu = (state) => {
+    return state.actu;
+};
 
+
+//Services
 export const plans = (state) => {
     return state.plans;
 };
 
-export const actu = (state) => {
-    return state.actu;
-};
+//Contact
+
+export const contact = (state) => {
+    return state.contact;
+}

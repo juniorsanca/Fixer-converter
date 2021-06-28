@@ -20,6 +20,15 @@
 
 
 
+                <ion-card-content v-if="user.name">
+                    <ion-card-content>
+                        <ion-button color="secondary" expand="full">S'abonner</ion-button>
+                    </ion-card-content>
+                </ion-card-content>
+
+                <ion-card-content v-else>
+                    <p>se connecter, pour s'abonner </p>
+                </ion-card-content>
 
 
             </ion-card><br>
@@ -82,8 +91,10 @@
         },
         computed: {
             ...mapGetters({ plans: "plans" }),
+            ...mapGetters({ user: "data" }),
             ...mapActions(['allServices']),
         },
+
     }
 </script>
 
